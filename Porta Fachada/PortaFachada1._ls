@@ -121,7 +121,7 @@
   (defun setaPontoPuxador()
 
     ;(initget 1 "D E")
-    (setq lado (substr lado 1 1))		;Peguei a primeira letra da string da variavel lado da caixa de dialogo.
+    (setq lado (substr lado 1 1))		;Peguei a primeira letra da string da variavel lado da caixade dialogo.
 
 
     	(cond

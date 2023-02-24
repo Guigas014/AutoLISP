@@ -78,7 +78,7 @@
 		     	    alt (atof alt))
 
 		     (portaf)
-		 )
+		  )
 	           
 		   (if (<= (atof alt) 0)
 		     (progn
@@ -88,8 +88,9 @@
 
 		        (portaf)
 		     )
-		         ;(setq teste 1)		;Tira o controle do looping e volta para o lisp principal. 
-		  )  
+		         ;(setq teste 1)		;Tira o controle do looping e volta para o lisp principal.
+		     
+		   )  
 	    )
 	)
     
