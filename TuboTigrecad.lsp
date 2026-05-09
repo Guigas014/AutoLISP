@@ -5,7 +5,7 @@
 (defun c:tt()
     ;Seleciona a linha de referência
     (setq obj (entget (car (entsel  "\n selecione a linha de referencia do tubo: "))))
-    (princ obj)
+    ;(princ obj)
 
     ;Definir os pontos extremos da linha de referência e seu angulo
     (setq pini (cdr (assoc 10 obj)))
@@ -53,7 +53,7 @@
 
     ;Muda a linha do meio
     (entdel (cdr (assoc -1 obj)))
-    (entmake (list (cons 0 "line") (cons 10 pini) (cons 11 pfim) (cons 62 1) (cons 6 "HIDDEN2") (cons 48 0.05)))t
+    (entmake (list (cons 0 "line") (cons 10 pini) (cons 11 pfim) (cons 62 1) (cons 6 "DASHDOT2") (cons 48 0.5)))t
 )
 
 ;Desenha tubo de 50
@@ -65,7 +65,7 @@
 
     ;Muda a linha do meio
     (entdel (cdr (assoc -1 obj)))
-    (entmake (list (cons 0 "line") (cons 10 pini) (cons 11 pfim) (cons 62 1) (cons 6 "HIDDEN2") (cons 48 0.05)))t
+    (entmake (list (cons 0 "line") (cons 10 pini) (cons 11 pfim) (cons 62 1) (cons 6 "DASHDOT2") (cons 48 0.5)))t
 )
 
 ;Desenha tubo de 75
@@ -77,7 +77,7 @@
 
     ;Muda a linha do meio
     (entdel (cdr (assoc -1 obj)))
-    (entmake (list (cons 0 "line") (cons 10 pini) (cons 11 pfim) (cons 62 1) (cons 6 "HIDDEN2") (cons 48 0.05)))t
+    (entmake (list (cons 0 "line") (cons 10 pini) (cons 11 pfim) (cons 62 1) (cons 6 "DASHDOT2") (cons 48 0.5)))t
 )
 
 ;Desenha tubo de 100
@@ -89,7 +89,7 @@
 
     ;Muda a linha do meio
     (entdel (cdr (assoc -1 obj)))
-    (entmake (list (cons 0 "line") (cons 10 pini) (cons 11 pfim) (cons 62 1) (cons 6 "HIDDEN2") (cons 48 0.05)))t
+    (entmake (list (cons 0 "line") (cons 10 pini) (cons 11 pfim) (cons 62 1) (cons 6 "DASHDOT2") (cons 48 0.5)))t
 )
 
 ;Desenha tubo de CV
@@ -103,5 +103,5 @@
 
     ;Muda a linha do meio
     (entdel (cdr (assoc -1 obj)))
-    (entmake (list (cons 0 "line") (cons 10 pini) (cons 11 pfim) (cons 62 1) (cons 6 "DOTX2") (cons 48 0.01)))
+    (entmake (list (cons 0 "line") (cons 10 pini) (cons 11 pfim) (cons 62 1) (cons 6 "DOTX2") (cons 48 0.005)))
 )
