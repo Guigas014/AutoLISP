@@ -160,10 +160,7 @@
 
   (if (not pDireito) (setq pDireito (atof pDirPadrao)))
   
-
   (setq pontoIn (getpoint "Clique no ponto de insercao: "))
-   
-
   
   ;Desenha linhas das paredes.
 ;   (verificaLayer "Parede" "6")
@@ -291,15 +288,22 @@
 
   (entmake (list (cons 0 "line") (cons 62 1) (cons 10 pLaje1) (cons 11 pLaje2)))
 
+  ;Desliga o snap
+  (setq snap (getvar "osmode"))
+  (setvar "osmode" 0)
+
   ;Insere o texto VISTA 1
-  (command "._text" "j" "tl" (polar pBase1 (/ (* 3 pi) 2) 0.20) 0.125 0 "VISTA 1" "")
+  (command "._text" "s" "RomanS" "j" "tl" (polar pBase1 (/ (* 3 pi) 2) 0.07) 0.125 0 "VISTA 1" "")
   ; Muda a cor do último objeto criado
   (command "CHPROP" "L" "" "C" 3 "")
 
-  ;Insere o texto esc 1:25
-  (command "._text" "j" "tl" (polar pBase1 (/ (* 3 pi) 2) 0.40) 0.08 0 "esc 1:25" "")
+  ;Insere o texto Escala 1:25
+  (command "._text" "s" "RomanS" "j" "tl" (polar pBase1 (/ (* 3 pi) 2) 0.30) 0.075 0 "Escala 1:25" "")
   ; Muda a cor do último objeto criado
-  (command "CHPROP" "L" "" "C" 1 "")
+  (command "CHPROP" "L" "" "C" 3 "")
 
   (princ)
+
+  ;Liga o snap
+  (setvar "osmode" snap)
 )
