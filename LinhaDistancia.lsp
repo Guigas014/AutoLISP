@@ -2,7 +2,7 @@
 ;;Autor: Guilherme Alves Araujo
 ;;Data: 23/04/19
 
-;funÁ„o principal
+;fun√ß√£o principal
 (defun c:ldim()
   (guardaVariaveis)
   (setq	p1     (getpoint "\nClique no primeiro ponto: ")
@@ -32,24 +32,24 @@
 
 
 
-;Guarda os valores das vari·veis de ambiente.
+;Guarda os valores das vari√°veis de ambiente.
 (defun guardaVariaveis ()
   (setq snap (getvar "osmode"))
-  (setq erroOriginal *error*)		;*error* = variavel padr„o que guarda os erros do CAD.
+  (setq erroOriginal *error*)		;*error* = variavel padr√£o que guarda os erros do CAD.
   (setq layerCorrente (getvar "clayer"))
 )
 
-;restaura os valores da vari·veis de ambiente.
+;restaura os valores da vari√°veis de ambiente.
 (defun restauraVariaveis ()
   (setvar "osmode" snap)
   (setvar "clayer" layerCorrente)
 )
 
-;Verifica a existÍncia de um layer e se ele esta desligado.
+;Verifica a exist√™ncia de um layer e se ele esta desligado.
 (defun verificaLayer (nome cor)
 	(setq layer (tblsearch "layer" nome))
 
-	(if (= layer nil)	;Verifica se o layer n„o existe.
+	(if (= layer nil)	;Verifica se o layer n√£o existe.
 		(progn 
 			(command "layer" "n" nome "c" cor nome "")	;cria um layer.
 			(setvar "clayer" nome)		;coloca o layer criado como corrente.
