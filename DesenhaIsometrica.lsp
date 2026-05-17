@@ -2,7 +2,7 @@
 ;;Autor: Guilherme Alves Araujo
 ;;Data: 11/05/26
 
-(defun c:mki(/ objs)
+(defun c:mki()
 
     ;Pegar todas as linha que serão desenhadas na isometria.
     (setq p1 (getpoint "\nPrimeiro canto da janela: "))
