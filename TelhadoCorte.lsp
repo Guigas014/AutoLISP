@@ -18,21 +18,21 @@
   	(setq rufo (getkword "\nO telhado tem Rufo (S) ou (N): "))
 
   	(if (= (strcase rufo) "S")
-		(setq largRufo (getreal "\nQual È a largura do Rufo: ")) 
+		(setq largRufo (getreal "\nQual √© a largura do Rufo: ")) 
 	)
   
   	(initget 128)
-  	(setq projecaoDupla (getkword "\nO telhado tem projeÁ„o nos dois lados (S) ou (N): "))
+  	(setq projecaoDupla (getkword "\nO telhado tem proje√ß√£o nos dois lados (S) ou (N): "))
 
   
-  	;Muda a posiÁ„o do ponto mais alto.
+  	;Muda a posi√ß√£o do ponto mais alto.
 	(if (= (strcase rufo) "S")
 		(setq pSuperior (polar pSuperior (* (/ pi 2) 3) 0.17))
 	  	(progn
 			(if (= (strcase rufo) "N")
 				(setq pSuperior (polar pSuperior (* (/ pi 2) 3) 0.11))
 			  	(progn
-					(alert "OpÁ„o incorreta!")
+					(alert "Op√ß√£o incorreta!")
 				  	(exit)
 				)
 			)
@@ -40,7 +40,7 @@
 	)
   	
 	  
-  	;Calcula a projeÁ„o do telhado se dupla ou n„o
+  	;Calcula a proje√ß√£o do telhado se dupla ou n√£o
   	(if (= (strcase projecaoDupla) "S")
 		(progn
 			(setq angulo (angle pSuperior pInferior))	
@@ -54,7 +54,7 @@
 					(setq pInferior (polar pInferior angulo 0.50))
 				)
 			  	(progn
-					(alert "OpÁ„o incorreta!")
+					(alert "Op√ß√£o incorreta!")
 				  	(exit)
 				)
 			)
@@ -163,10 +163,10 @@
 )
 
 
-;Guarda os valores das vari·veis de ambiente.
+;Guarda os valores das vari√°veis de ambiente.
 (defun guardaVariaveis ()
   (setq snap (getvar "osmode"))
-  (setq erroOriginal *error*)		;*error* = variavel padr„o que guarda os erros do CAD.
+  (setq erroOriginal *error*)		;*error* = variavel padr√£o que guarda os erros do CAD.
   (setq layerCorrente (getvar "clayer"))
   (setq textoCorrente (getvar "textstyle"))
   (setq corCorrente (getvar "cecolor"))
@@ -174,7 +174,7 @@
   (setq escCorrente (getvar "celtscale"))
 )
 
-;restaura os valores da vari·veis de ambiente.
+;restaura os valores da vari√°veis de ambiente.
 (defun restauraVariaveis ()
   (setvar "osmode" snap)
   (setvar "clayer" layerCorrente)
